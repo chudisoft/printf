@@ -1,7 +1,14 @@
 #include <stdarg.h>
 #include "main.h"
 
-int _printf(const char *format, ...){
+/**
+ * _printf - writes formated characters to stdout
+ * @format: The character to print
+ *
+ * Return: count of the printed string.
+ */
+int _printf(const char *format, ...)
+{
 	va_list arg;
 	char *val;
 	int counter = 0, formatLength, i = 0;
@@ -11,8 +18,9 @@ int _printf(const char *format, ...){
 
 	for (i = 0; i < formatLength; i++)
 	{
-		if(format[i] == '%'){
-			switch (format[i+1])
+		if (format[i] == '%')
+		{
+			switch (format[i + 1])
 			{
 				case 'c':
 					_putchar(va_arg(arg, int));
@@ -27,7 +35,9 @@ int _printf(const char *format, ...){
 					break;
 			}
 			i++;
-		}else{
+		}
+		else
+		{
 			_putchar((int)format[i]);
 			counter++;
 		}
