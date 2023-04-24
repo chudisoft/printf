@@ -9,11 +9,11 @@
  */
 int _printS(char *val)
 {
-	int valCount = 0;
+	int i = 0;
 
-	for (valCount = 0; val && val[i] != '\0'; valCount++)
+	for (i = 0; val && val[i] != '\0'; i++)
 	{
-		_putchar((int)val[valCount]);
+		_putchar((int)val[i]);
 	}
-	return valCount;
+	return i;
 }
