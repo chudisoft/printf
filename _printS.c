@@ -9,10 +9,9 @@
  */
 int _printS(char *val)
 {
-	int valLen = 0, valCount = 0;
+	int valCount = 0;
 
-	valLen = _strlen(val);
-	for (valCount = 0; valCount < valLen; valCount++)
+	for (valCount = 0; val && val[i] != '\0'; valCount++)
 	{
 		_putchar((int)val[valCount]);
 	}
