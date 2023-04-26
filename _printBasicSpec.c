@@ -174,7 +174,7 @@ int _printB(va_list types, char b[],
 {
 	unsigned int arr[32];
 	unsigned int i, total, k, l;
-    int c;
+	int c;
 
 	UNUSED(b);
 	UNUSED(_prec);
