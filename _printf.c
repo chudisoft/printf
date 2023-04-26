@@ -1,67 +1,67 @@
 #include "main.h"
 
-void print_buffer(char buffer[], int *buff_ind);
+void handle_buffer(char b[], int *bIndex);
 
 /**
- * _printf - Prints formated string
- * @format: formated string
- * Return: Count of printed characters
+ * _printf - prints formated string to standard output
+ * @format: formated string containing the string to print with specifiers
+ * Return: count of Printed characters
  */
 int _printf(const char *format, ...)
 {
-	int i, printed = 0, printed_chars = 0;
+	int j, fExpCount = 0, printCount = 0;
 	int flags, width, precision, size, buff_ind = 0;
 	va_list list;
-	char buffer[BUFF_SIZE];
+	char b[BUFF_SIZE];
 
 	if (format == NULL)
 		return (-1);
 
 	va_start(list, format);
 
-	for (i = 0; format && format[i] != '\0'; i++)
+	for (j = 0; format && format[j] != '\0'; j++)
 	{
-		if (format[i] != '%')
+		if (format[j] != '%')
 		{
-			buffer[buff_ind++] = format[i];
+			b[buff_ind++] = format[j];
 			if (buff_ind == BUFF_SIZE)
-				print_buffer(buffer, &buff_ind);
+				handle_buffer(b, &buff_ind);
 			/* write(1, &format[i], 1); */
-			printed_chars++;
+			printCount++;
 		}
 		else
 		{
-			print_buffer(buffer, &buff_ind);
-			flags = get_flags(format, &i);
-			width = get_width(format, &i, list);
-			precision = get_precision(format, &i, list);
-			size = get_size(format, &i);
-			++i;
-			printed = handle_print(format, &i, list, buffer,
+			handle_buffer(b, &buff_ind);
+			flags = fetchFlags(format, &j);
+			width = fetchWidth(format, &j, list);
+			precision = fetchPreci(format, &j, list);
+			size = fetchSize(format, &j);
+			++j;
+			fExpCount = _processPrint(format, &j, list, b,
 					flags, width, precision, size);
-			if (printed == -1)
+			if (fExpCount == -1)
 				return (-1);
-			printed_chars += printed;
+			printCount += fExpCount;
 		}
 	}
 
-	print_buffer(buffer, &buff_ind);
+	handle_buffer(b, &buff_ind);
 
 	va_end(list);
 
-	return (printed_chars);
+	return (printCount);
 }
 
 /**
- * print_buffer - Prints buffer contents if it exists
- * @buffer: Array of characters
- * @buff_ind: Index of next char, represents the length.
+ * handle_buffer - handles buffer contents if they exists
+ * @b:  Character arrays
+ * @bIndex: Index to add next character, representing the length.
  */
 
-void print_buffer(char buffer[], int *buff_ind)
+void handle_buffer(char b[], int *bIndex)
 {
-	if (*buff_ind > 0)
-		write(1, &buffer[0], *buff_ind);
+	if (*bIndex > 0)
+		write(1, &b[0], *bIndex);
 
-	*buff_ind = 0;
+	*bIndex = 0;
 }
