@@ -5,7 +5,7 @@
 /**
  * print_pointer - Prints the value of a pointer variable
  * @types: List of arguments
- * @buffer: Buffer array to handle print
+ * @b: Buffer array to handle print
  * @flags: Calculates active flags
  * @width: get width
  * @_prec: Precision specification
@@ -61,7 +61,7 @@ int print_pointer(va_list types, char b[],
  * print_non_printable - Prints ascii codes in hexa of non printable
  * characters
  * @types: List of arguments
- * @buffer: Buffer array to handle print
+ * @b: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width
  * @_prec: Precision specification
@@ -103,7 +103,7 @@ int print_non_printable(va_list types, char b[],
 /**
  * print_reverse - Prints reverse string.
  * @types: List of arguments
- * @buffer: Buffer array to handle print
+ * @b: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width
  * @_prec: Precision specification
@@ -149,7 +149,7 @@ int print_reverse(va_list types, char b[],
 /**
  * print_rot13string - Print a string in rot13.
  * @types: List of arguments
- * @buffer: Buffer array to handle print
+ * @b: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width
  * @_prec: Precision specification

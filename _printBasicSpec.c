@@ -8,7 +8,7 @@
  * @b: Array of buffer to handle print
  * @flags: Calculates active flags
  * @width: Array width.
- * @_prec: Specification for precision 
+ * @_prec: Specification for precision
  * @size: Specifier for size
  *
  * Return: Numbers of char printed.
@@ -21,7 +21,7 @@ int _printC(va_list types, char b[],
 	return (handle_write_char(c, b, flags, width, _prec, size));
 }
 
-/*PRINT A STRING*/
+/* PRINT A STRING */
 
 /**
  * _printS - Prints string
@@ -29,7 +29,7 @@ int _printC(va_list types, char b[],
  * @b: Array of buffer to handle print
  * @flags: Calculates active flags
  * @width: Array width.
- * @_prec: Specification for precision 
+ * @_prec: Specification for precision
  * @size: Specifier for size
  *
  * Return: Numbers of char printed.
@@ -80,7 +80,7 @@ int _printS(va_list types, char b[],
 	return (write(1, str, length));
 }
 
-/*PRINT PERCENT*/
+/* PRINT PERCENT */
 
 /**
  * _printPerc - Prints percent
@@ -88,7 +88,7 @@ int _printS(va_list types, char b[],
  * @b: Array of buffer to handle print
  * @flags: Calculates active flags
  * @width: Array width.
- * @_prec: Specification for precision 
+ * @_prec: Specification for precision
  * @size: Specifier for size
  *
  * Return: Numbers of char printed.
@@ -107,8 +107,8 @@ int _printPerc(va_list types, char b[],
 	return (write(1, "%%", 1));
 }
 
-/**
-/*PRINT INT*/
+
+/* PRINT INT */
 
 /**
  * _printI - Print int
@@ -116,7 +116,7 @@ int _printPerc(va_list types, char b[],
  * @b: Array of buffer to handle print
  * @flags: Calculates active flags
  * @width: Array width.
- * @_prec: Specification for precision 
+ * @_prec: Specification for precision
  * @size: Specifier for size
  *
  * Return: Numbers of char printed.
@@ -155,7 +155,7 @@ int _printI(va_list types, char b[],
 	return (write_number(has_neg, i, b, flags, width, _prec, size));
 }
 
-/*PRINT BINARY*/
+/* PRINT BINARY */
 
 /**
  * _printB - Prints out unsigned numbers
@@ -163,7 +163,7 @@ int _printI(va_list types, char b[],
  * @b: Array of buffer to handle print
  * @flags: Calculates active flags
  * @width: Array width.
- * @_prec: Specification for precision 
+ * @_prec: Specification for precision
  * @size: Specifier for size
  *
  * Return: Numbers of char printed.

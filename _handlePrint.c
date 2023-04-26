@@ -5,7 +5,7 @@
  * @fmt: Formatted string in which to print the arguments.
  * @list: Arguments List to be printed.
  * @ind: index.
- * @buffer: Array buffer to handle print.
+ * @b: Array buffer to handle print.
  * @flags: Calculates active flags
  * @width: gets width.
  * @_prec: Precision specification
